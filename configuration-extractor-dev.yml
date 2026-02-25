@@ -1,5 +1,5 @@
 apis:
-  - api1
+  - apim-ecs-petstore
 versionSets: []
 workspaces: []
 backends: []
