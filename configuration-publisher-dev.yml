@@ -1,4 +1,4 @@
 apis:
  - name: apim-ecs-petstore
    properties:
-    serviceUrl: "https://cnn.com/v1"
+    serviceUrl: ""
