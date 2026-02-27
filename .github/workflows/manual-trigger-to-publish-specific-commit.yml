@@ -40,7 +40,6 @@ on:
        This will be used in Job Summary. If Deploying to Prod, this will be used to name API Revision as well.
       required: true
       type: string
-      default: 'RITM100000'       
      API_NAME_FOR_REVISIONING:
       description: |
        Only Applicable for Prod. Enter Name of API to create a backup Revision.
@@ -63,7 +62,7 @@ jobs:
      with:
       CHANNEL_NAME: "TEST_DEPLOYMENT_CHANNEL"
       MESSAGE_TITLE: "Deployment waiting for Approval."
-      MESSAGE_BODY: "There is a Deployment to Test APIM Instance waiting for Approval.Access the Workflow at: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+      MESSAGE_BODY: "There is a Deployment to Test APIM Instance waiting for Approval.Access the Workflow at: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}>"
 
     Notify-MS-Teams-Prod-Channel:
      name: Notify-MS-Teams-Prod-Channel
@@ -72,7 +71,7 @@ jobs:
      with:
       CHANNEL_NAME: "PROD_DEPLOYMENT_CHANNEL"
       MESSAGE_TITLE: "Deployment waiting for Approval."
-      MESSAGE_BODY: "There is a Deployment to Prod APIM Instance waiting for Approval.Access the Workflow at: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"      
+      MESSAGE_BODY: "There is a Deployment to Prod APIM Instance waiting for Approval.Access the Workflow at: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}>"      
 
     Publish-All-Artifacts-to-Dev-APIM:
      if: ${{ inputs.API_MANAGEMENT_ENVIRONMENT  == 'dev' }}
@@ -112,7 +111,7 @@ jobs:
       
     Publish-All-Artifacts-to-Prod-APIM:
      needs: Create-Backup-Revision-and-Delete-Older-Revisions
-     if: ${{ inputs.API_MANAGEMENT_ENVIRONMENT  == 'prod' }}
+     if: ${{ !failure() && !cancelled() && inputs.API_MANAGEMENT_ENVIRONMENT  == 'prod' }}
      name: Publish-All-Artifacts-to-Prod-APIM
      uses: martin2176/ecs-apim-workflows/.github/workflows/publish-to-prod-apim-specific-commit-artifacts.yml@main
      with:
