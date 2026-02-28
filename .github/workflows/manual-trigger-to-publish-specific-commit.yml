@@ -135,3 +135,4 @@ jobs:
       BRANCH_TO_DEPLOY_FROM: ${{ inputs.BRANCH_TO_DEPLOY_FROM }} 
       BRANCH_FOR_PUBLISHER_CONFIG: main
       REFERENCE_NUMBER: ${{ inputs.REFERENCE_NUMBER }}
+      DRY_RUN: ${{ inputs.DRY_RUN }}
