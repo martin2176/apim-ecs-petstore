@@ -66,3 +66,4 @@ jobs:
       MILESTONE_TITLE: ${{ inputs.MILESTONE_TITLE }}
       API_MANAGEMENT_ENVIRONMENT: prod
       BRANCH_TO_DEPLOY_FROM: ${{ inputs.BRANCH_TO_DEPLOY_FROM }}
+      DRY_RUN: ${{ inputs.DRY_RUN }}
