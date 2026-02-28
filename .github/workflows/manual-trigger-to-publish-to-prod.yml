@@ -22,6 +22,15 @@ on:
        or you do not want to create a backup revision.       
       required: false
       type: string
+     DRY_RUN:
+      description: |
+       Do you want to run in Dry Run Mode ?
+       (Dry run Mode is only applicable for Production and will be skipped for Dev, Test)
+      required: true
+      default: "no"
+      options:
+       - "no"
+       - "yes"
 
 concurrency:
  group: publish-to-prod-apim-instance
@@ -41,6 +50,7 @@ jobs:
       MESSAGE_BODY: "There is a Deployment to Prod APIM Instance waiting for Approval.Access the Workflow at: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}>"
 
     Create-Backup-Revision-and-Delete-Older-Revisions:
+     if: ${{ inputs.DRY_RUN == 'no' }}
      uses: martin2176/ecs-apim-workflows/.github/workflows/publish-to-prod-api-revision-management.yml@main
      with:
       REVISION_ID: ${{ inputs.MILESTONE_TITLE }}
