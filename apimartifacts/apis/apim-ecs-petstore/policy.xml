@@ -8,7 +8,6 @@
 	<!-- Throttle, authorize, validate, cache, or transform the requests -->
 	<inbound>
 		<base />
-		<set-variable name="IsMobileglobal" value="@(context.Request.Headers.GetValueOrDefault("User-Agent","").Contains("iPad") || context.Request.Headers.GetValueOrDefault("User-Agent","").Contains("iPhone"))" />
 	</inbound>
 	<!-- Control if and how the requests are forwarded to services  -->
 	<backend>
