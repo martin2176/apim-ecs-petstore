@@ -16,6 +16,7 @@
     "protocols": [
       "https"
     ],
+    "serviceUrl": "https://feiaz-apim-dev.azure-api.net/ecs-apim-pestore",
     "subscriptionKeyParameterNames": {
       "header": "Ocp-Apim-Subscription-Key",
       "query": "subscription-key"
