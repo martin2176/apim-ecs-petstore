@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "path": "apim-ecs-petstore",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "description": "apim-ecs-petstore description",
+    "displayName": "apim-ecs-petstore",
+    "isCurrent": true,
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "protocols": [
+      "https"
+    ],
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true,
+    "termsOfServiceUrl": "https://swagger.io/terms/"
+  }
+}
