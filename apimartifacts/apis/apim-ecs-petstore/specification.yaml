@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: apim-ecs-petstore
-  description: "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about\nSwagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!\nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.\n\nSome useful links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)"
+  description: apim-ecs-petstore
   termsOfService: https://swagger.io/terms/
   contact:
     email: apiteam@swagger.io
@@ -99,11 +99,11 @@ paths:
     post:
       tags:
         - pet
-      summary: Add a new pet to the store.
+      summary: Add a new pet to the store version1
       description: Add a new pet to the store.
       operationId: addPet
       requestBody:
-        description: Create a new pet in the store
+        description: Create a new pet in the store version1
         content:
           application/json:
             schema:
@@ -149,7 +149,7 @@ paths:
                   type: string
                   description: pet status in the store
       responses:
-        '200':
+        '201':
           description: Successful operation
           content:
             application/json:
@@ -421,7 +421,9 @@ paths:
             schema:
               type: string
               format: binary
-            example: ''
+            examples:
+              default:
+                value: 
       responses:
         '200':
           description: successful operation
