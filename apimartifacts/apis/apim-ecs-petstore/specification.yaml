@@ -8,14 +8,12 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  version: '1.0'
+  version: ''
 servers:
   - url: https://feiaz-apim-dev.azure-api.net/apim-ecs-petstore
 paths:
   /pet:
     put:
-      tags:
-        - pet
       summary: Update an existing pet.
       description: Update an existing pet by Id.
       operationId: updatePet
@@ -97,8 +95,6 @@ paths:
         '500':
           description: Unexpected error
     post:
-      tags:
-        - pet
       summary: Add a new pet to the store.
       description: Add a new pet to the store.
       operationId: addPet
@@ -179,8 +175,6 @@ paths:
           description: Unexpected error
   /pet/findByStatus:
     get:
-      tags:
-        - pet
       summary: Finds Pets by status.
       description: Multiple status values can be provided with comma separated strings.
       operationId: findPetsByStatus
@@ -229,8 +223,6 @@ paths:
           description: Unexpected error
   /pet/findByTags:
     get:
-      tags:
-        - pet
       summary: Finds Pets by tags.
       description: 'Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.'
       operationId: findPetsByTags
@@ -276,8 +268,6 @@ paths:
           description: Unexpected error
   '/pet/{petId}':
     get:
-      tags:
-        - pet
       summary: Find pet by ID.
       description: Returns a single pet.
       operationId: getPetById
@@ -319,8 +309,6 @@ paths:
         '500':
           description: Unexpected error
     post:
-      tags:
-        - pet
       summary: Updates a pet in the store with form data.
       description: Updates a pet resource based on the form data.
       operationId: updatePetWithForm
@@ -370,8 +358,6 @@ paths:
         '500':
           description: Unexpected error
     delete:
-      tags:
-        - pet
       summary: Deletes a pet.
       description: Delete a pet.
       operationId: deletePet
@@ -397,8 +383,6 @@ paths:
           description: Unexpected error
   '/pet/{petId}/uploadImage':
     post:
-      tags:
-        - pet
       summary: Uploads an image.
       description: Upload image of the pet.
       operationId: uploadFile
@@ -421,9 +405,7 @@ paths:
             schema:
               type: string
               format: binary
-            examples:
-              default:
-                value: 
+            example: ''
       responses:
         '200':
           description: successful operation
@@ -971,11 +953,6 @@ security:
   - apiKeyHeader: [ ]
   - apiKeyQuery: [ ]
 tags:
-  - name: pet
-    description: Everything about your Pets
-    externalDocs:
-      description: Find out more
-      url: https://swagger.io/
   - name: store
     description: Access to Petstore orders
     externalDocs:
