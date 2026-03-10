@@ -1,5 +1,3 @@
-apis:
-  - apim-ecs-petstore
 workspaces: []
 backends: []
 namedValues: []
