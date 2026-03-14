@@ -1,2 +1,7 @@
 /.gitignore @apim-codeowners
 /.github/workflows/* @apim-codeowners
+/CODEOWNERS @apim-codeowners
+/configuration-extractor-dev.yml @apim-codeowners
+/configuration-publisher-dev.yml @apim-codeowners
+/configuration-publisher-prod.yml @apim-codeowners
+/configuration-publisher-test.yml @apim-codeowners
