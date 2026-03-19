@@ -2,6 +2,7 @@
   "properties": {
     "path": "apim-ecs-petstore",
     "apiRevision": "1",
+    "apiVersion": "v2",
     "apiVersionSetId": "/apiVersionSets/69af7819ef6869e1f54a50ba",
     "authenticationSettings": {},
     "contact": {
