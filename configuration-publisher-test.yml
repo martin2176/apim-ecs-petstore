@@ -1,1 +1,4 @@
-
+apis:
+ - name: api1
+   properties:
+    serviceUrl: ""
