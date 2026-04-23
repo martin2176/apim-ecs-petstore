@@ -1,3 +1,6 @@
+apis: 
+  - api1
+versionSets: []
 workspaces: []
 backends: []
 namedValues: []
