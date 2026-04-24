@@ -1,4 +1,4 @@
 apis:
  - name: api1
    properties:
-    serviceUrl: null
+    serviceUrl: https://feiaz-apim-test.azure-api.net
